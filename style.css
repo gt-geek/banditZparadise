@@ -18,6 +18,7 @@ body {
     padding: 0;
     color: white;
     overflow-x: hidden; /* horizontal scroll verhindern */
+    overflow-y: auto;   /* vertikal scrollen */
 }
 
 /* ===========================
@@ -59,13 +60,17 @@ body {
     padding-top: 70px; /* Platz für Navbar */
 }
 
-/* Overlay: Hintergrund + Verdunkelung */
+/* ===========================
+   OVERLAY + BACKGROUND
+=========================== */
 .overlay {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* flexibel */
-    background: url("./landing_bg.jpg") no-repeat center top / cover fixed;
-    background-color: rgba(0,0,0,0.4); /* Verdunkelung */
+    min-height: 100vh;
+    background-image: url("./landing_bg.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,13 +79,27 @@ body {
     padding: 2rem;
 }
 
-/* Container für allgemeine Inhalte */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+/* Dunkle Overlay-Schicht über Hintergrund */
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Buttons */
+/* Container-Inhalt über Overlay */
+.container, .rules-page .content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -109,6 +128,7 @@ body {
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    overflow: visible;
 }
 
 .rules-page .content h1,
@@ -144,23 +164,6 @@ body {
     margin-left: 1.5rem;
 }
 
-.rules-page .content .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    margin-top: 2rem;
-    background: rgba(255,0,0,0.8);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.rules-page .content .btn:hover {
-    background: red;
-    color: black;
-}
-
 /* ===========================
    ABOUT / DISCORD PAGES
 =========================== */
@@ -168,7 +171,10 @@ body {
     height: 50vh;
     position: relative;
     overflow: hidden;
-    background: url("./landing_bg.jpg") no-repeat center / cover fixed;
+    background-image: url("./landing_bg.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .about-scroll-bg {
