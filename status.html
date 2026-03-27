@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Server Status</title></head>
+<body>
+  <h1>Dein DayZ Server</h1>
+  <div id="banner"><!-- Banner-Code hier --></div>
+  <script>
+    // Optional: Fetch API für JSON (braucht Key)
+    fetch('https://api.battlemetrics.com/servers/38448947')
+      .then(r=>r.json()).then(d=>document.getElementById('status').innerText = `Players: ${d.data.attributes.players}/${d.data.attributes.maxPlayers}`);
+  </script>
+  <p id="status"></p>
+</body>
+</html>
