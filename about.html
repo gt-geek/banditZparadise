@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About - BanditZParadise</title>
-  >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - BanditZParadise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar (optional) -->
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="rules.html">Rules</a>
-    <a href="discord.html">Discord</a>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="discord.html">Discord</a>
+    </nav>
 
-  <section class="about-section" id="about-content">
-    <div class="about-scroll-bg" id="about-bg"></div>
-    <div class="about-text" id="about-text">
-      <h1>BanditZParadise – Survival of the Fittest</h1>
-      <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
-      BanditZParadise isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.
+    <!-- About Scroll-Section -->
+    <section class="about-section" id="about-content">
+        <div class="about-scroll-bg" id="about-bg"></div>
+        <div class="about-text" id="about-text">
+            <h1>BanditZParadise – Survival of the Fittest</h1>
+            <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
+            <p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
+            <p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZRules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
+            <p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules within our <strong>Discord</strong> in the navigation above.</p>
+            <p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
+            <p style="font-size: 1.5rem; margin-top: 2rem;"><strong>Yarr harr, Banditos!</strong> 🏴‍☠️💀</p>
+            <a href="discord.html" class="btn" style="margin-top: 2rem; font-size: 1.4rem;">Join the Bandits</a>
+        </div>
+    </section>
 
-Our admins rule with an iron fist for fair bandit warfare: No cheaters, no exploiters, no crybabies. Violations of the BanditZRules end quickly and permanently. Respect the code, or become the hunted.
-
-BanditZParadise runs 24/7 for the true hardcore crew. Find our server IP, rules, and Discord in the navigation links above.
-
-Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. BanditZParadise – where the strongest rule and the weak become legends.
-      <p class="btn" onclick="window.location.href='discord.html'">Join Discord Now</p>
-    </div>
-  </section>
-  
-  <script>
-    // Scroll-Magic (einmalig triggern)
-    let scrolled = false;
-    window.addEventListener('scroll', () => {
-      if (scrolled) return;
-      const rect = document.getElementById('about-content').getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        document.getElementById('about-bg').classList.add('scrolled');
-        document.getElementById('about-text').classList.add('scrolled');
-        scrolled = true;
-      }
-    });
-  </script>
+    <script>
+        let aboutTriggered = false;
+        window.addEventListener('scroll', () => {
+            if (aboutTriggered) return;
+            const section = document.getElementById('about-content');
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                document.getElementById('about-bg').classList.add('scrolled');
+                document.getElementById('about-text').classList.add('scrolled');
+                aboutTriggered = true;
+            }
+        });
+    </script>
 </body>
 </html>
