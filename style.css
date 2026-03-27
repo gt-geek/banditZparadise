@@ -95,12 +95,15 @@ h1 {
 
 /* Für die Discord-Seite */
 .discord-page .container {
-    min-height: calc(100vh - 80px); /* Platz für Navbar */
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertikal zentrieren */
-    align-items: center;     /* Horizontal zentrieren */
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 0 20px;           /* Optional: etwas Rand */
+    margin: 0 auto;            /* Center im Viewport */
+    width: 100%;
 }
 
 /* Buttons in Navbar */
