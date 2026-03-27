@@ -91,9 +91,6 @@ html, body {
 </head>
 <body>
 
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="discord.html">Discord</a>
 </div>
 
 <div id="about-bg"></div>
@@ -117,7 +114,7 @@ const bg = document.getElementById('about-bg');
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY;
     // Overlay-Farbe von transparent (0) zu dunkel (0.5) abhängig von Scrollhöhe
-    let opacity = Math.min(scrollTop / 600, 0.5); // langsamer Übergang
+    let opacity = Math.min(scrollTop / 600, 0.8); // langsamer Übergang
     bg.style.background = `rgba(0,0,0,${opacity})`;
 });
 </script>
