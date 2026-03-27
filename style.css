@@ -73,7 +73,7 @@ body {
     background-attachment: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* content oben starten */
     flex-direction: column;
     text-align: center;
     padding: 2rem;
@@ -153,6 +153,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Listen sauber formatieren */
 .rules-page .content ul {
     list-style-type: disc;
     padding-left: 2rem;
@@ -161,7 +162,19 @@ body {
 
 .rules-page .content ul ul {
     list-style-type: circle;
-    margin-left: 1.5rem;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.rules-page .content ul ul ul {
+    list-style-type: square;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.rules-page .content ul li {
+    line-height: 1.6; /* angenehmer Abstand */
+    margin-bottom: 0.3rem;
 }
 
 /* ===========================
