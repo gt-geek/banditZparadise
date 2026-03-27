@@ -1,48 +1,125 @@
+Neue About
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>About BanditZParadise</title>
 <style>
-html,body {margin:0;height:100%;background: url("landing_bg.jpg") center/cover fixed;}
-#about-bg {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);transform:translateY(100vh);transition:transform 1s;}
-#about-bg.scrolled {transform:translateY(0);}
-#about-text {position:relative;z-index:10;color:white;font-weight:bold;padding:4rem;max-width:900px;margin:2rem auto;font-size:22px;line-height:1.6;text-align:center;opacity:0;transform:translateY(4rem);transition:all 1s 0.5s;}
-#about-text.scrolled {opacity:1;transform:translateY(0);}
-#about-text h1 {font-size:3rem;margin-bottom:1.5rem;text-align:center;}
-.navbar {position:fixed;top:20px;right:20px;z-index:100;}
-.navbar a {color:white;margin-left:20px;text-decoration:none;font-weight:bold;}
-.btn {display:inline-block;padding:12px 30px;color:white;border:2px solid red;background:rgba(0,0,0,0.7);text-decoration:none;font-weight:bold;font-size:14px;transition:0.3s;margin-top:2rem;}
-.btn:hover {background:red;color:black;}
-@media (max-width:768px) {#about-text{font-size:12px;padding:2rem 1rem;} h1{font-size:2rem;}}
+html, body {
+    margin: 0;
+    height: 100%;
+    background: url("landing_bg.jpg") center/cover fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Overlay für Hintergrundeffekt */
+#about-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* leicht transparent */
+    z-index: 1;
+    pointer-events: none; /* scrollbar funktioniert normal */
+    transition: background 0.5s;
+}
+
+/* Textbereich direkt sichtbar */
+#about-text {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 4rem 2rem;
+    font-size: 22px;
+    line-height: 1.6;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.5); /* leichter schwarzer Hintergrund */
+    border-radius: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    color: white;
+    border: 2px solid red;
+    background: rgba(0,0,0,0.7);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: red;
+    color: black;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    #about-text {
+        font-size: 16px;
+        padding: 2rem 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
 </style>
 </head>
 <body>
-</nav>
-<section style="height:150vh;">
-<div id="about-bg"></div>
-<div id="about-text">
 
-<h1>BanditZParadise – Survival of the Fittest</h1>
-<p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
-<p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
-<p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZParadise - Rules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
-<p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules further information within our <strong>DISCORD</strong> in the navigation above.</p>
-<p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
-<p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 🏴‍☠️💀</p>
-<a href="discord.html" class="btn">Join the BanditZ</a>
-
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="discord.html">Discord</a>
 </div>
+
+<div id="about-bg"></div>
+
+<section style="padding-top:80px;">
+  <div id="about-text">
+    <h1>BanditZParadise – Survival of the Fittest</h1>
+    <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
+    <p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
+    <p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZParadise - Rules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
+    <p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules, and further information within our <strong>DISCORD</strong> in the navigation above.</p>
+    <p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
+    <p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 🏴‍☠️💀</p>
+    <a href="discord.html" class="btn">Join the BanditZ</a>
+  </div>
 </section>
+
 <script>
-let triggered = false;
+// Overlay dunkler/heller je nach Scroll
+const bg = document.getElementById('about-bg');
 window.addEventListener('scroll', () => {
-  if (triggered) return;
-  if (window.scrollY > 50) {  // Früher bei 100px Scroll
-    document.getElementById('about-bg').classList.add('scrolled');
-    document.getElementById('about-text').classList.add('scrolled');
-    triggered = true;
-  }
+    let scrollTop = window.scrollY;
+    // Mehr scroll = dunkler Overlay, weniger scroll = transparenter
+    bg.style.background = `rgba(0,0,0,${0.2 + Math.min(scrollTop/500, 0.5)})`;
 });
 </script>
+
 </body>
 </html>
+
