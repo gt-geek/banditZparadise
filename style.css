@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("assets/background.jpg") no-repeat center center/cover;
+    color: white;
+}
+
+/* Dark overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+}
+
+/* Center content */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid red;
+    transition: 0.3s;
+    background: rgba(0,0,0,0.6);
+}
+
+.btn:hover {
+    background: red;
+    color: black;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.navbar a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    color: red;
+}
