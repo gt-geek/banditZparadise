@@ -61,19 +61,21 @@ h1 {
 
 /* Navbar */
 .navbar {
-position: fixed; /* bleibt beim Scrollen oben */
-    top: 1;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* schwarz, leicht transparent */
-    display: flex;
-    justify-content: left; /* Buttons zentrieren horizontal */
-    align-items: left;
-    padding: 45px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* optionaler Schatten */
-}
+    position: absolute;
+    top: 55%;              /* leicht unter der Mitte */
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfektes Zentrieren */
 
+    display: flex;
+    gap: 20px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+    border-radius: 10px;
+
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 /* Buttons in Navbar */
 .navbar a {
     color: white;
