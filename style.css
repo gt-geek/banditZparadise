@@ -18,11 +18,11 @@ body {
     padding-top: 80px; /* Platz für feste Navbar */
 }
 
-/* Dark overlay */
+/* Dark overlay 
 .overlay {
     background: rgba(0, 0, 0, 0.4);
     min-height: 100vh;
-    width: 100%;
+    width: 100%; */
 }
 
 /* Center content */
