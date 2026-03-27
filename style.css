@@ -67,9 +67,9 @@ position: fixed; /* bleibt beim Scrollen oben */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* schwarz, leicht transparent */
     display: flex;
-    justify-content: center; /* Buttons zentrieren horizontal */
-    align-items: center;
-    padding: 40px 0;
+    justify-content: left; /* Buttons zentrieren horizontal */
+    align-items: left;
+    padding: 45px 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* optionaler Schatten */
 }
