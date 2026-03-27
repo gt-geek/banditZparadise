@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About - BanditZParadise</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About - BanditZParadise</title>
+  >
 </head>
 <body>
+  <!-- Navbar (optional) -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="discord.html">Discord</a>
+  </nav>
 
-<div class="overlay">
-
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="rules.html">Rules</a>
-        <a href="discord.html">Discord</a>
-    </div>
-
-    <div class="container">
-        <h1>About</h1>
-        <p>Welcome to BanditZParadise.</p>
-        
-        <p>Welcome to BanditZParadise – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.
-
-BanditZParadise isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.
+  <section class="about-section" id="about-content">
+    <div class="about-scroll-bg" id="about-bg"></div>
+    <div class="about-text" id="about-text">
+      <h1>BanditZParadise – Survival of the Fittest</h1>
+      <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
+      BanditZParadise isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.
 
 Our admins rule with an iron fist for fair bandit warfare: No cheaters, no exploiters, no crybabies. Violations of the BanditZRules end quickly and permanently. Respect the code, or become the hunted.
 
-BanditZParadise runs 24/7 for the true hardcore crew. Find our server IP, rules within our Discord in the navigation links above.
+BanditZParadise runs 24/7 for the true hardcore crew. Find our server IP, rules, and Discord in the navigation links above.
 
-Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. BanditZParadise – where the strongest rule and the weak become legends.</p>
+Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. BanditZParadise – where the strongest rule and the weak become legends.
+      <p class="btn" onclick="window.location.href='discord.html'">Join Discord Now</p>
     </div>
-
-</div>
-
+  </section>
+  
+  <script>
+    // Scroll-Magic (einmalig triggern)
+    let scrolled = false;
+    window.addEventListener('scroll', () => {
+      if (scrolled) return;
+      const rect = document.getElementById('about-content').getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        document.getElementById('about-bg').classList.add('scrolled');
+        document.getElementById('about-text').classList.add('scrolled');
+        scrolled = true;
+      }
+    });
+  </script>
 </body>
 </html>
