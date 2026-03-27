@@ -172,3 +172,74 @@ h1 {
         font-size: 2.5rem !important;
     }
 }
+/* Rules‑Seite – nur Inhalt innen */
+.rules-page .content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.rules-page .content h1,
+.rules-page .content h2,
+.rules-page .content h3 {
+    color: #ff4c4c;
+    margin-top: 2rem;
+}
+
+.rules-page .content h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.rules-page .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.rules-page .content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.rules-page .content ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.rules-page .content ul ul {
+    list-style-type: circle;
+    margin-left: 1.5rem;
+}
+
+.rules-page .content .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 2rem;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.rules-page .content .btn:hover {
+    background: red;
+    color: black;
+}
+
+@media (max-width:768px) {
+    .rules-page .content {
+        padding: 2rem 1rem;
+    }
+    .rules-page .content h1 {
+        font-size: 2rem;
+    }
+    .rules-page .content h2 {
+        font-size: 1.4rem;
+    }
+}
