@@ -155,14 +155,22 @@ body {
 }
 
 .rules-page .content ul {
-    list-style-type: disc;
+    list-style-type: disc;  /* Nur echte Listen bekommen Punkte */
     padding-left: 2rem;
     margin-bottom: 1rem;
 }
 
+/* Verschachtelte Listen */
 .rules-page .content ul ul {
     list-style-type: circle;
     margin-left: 1.5rem;
+}
+   /* Absätze oder andere Texte sollen keine Punkte bekommen */
+.rules-page .content p,
+.rules-page .content h2 + p,
+.rules-page .content h3 + p {
+    list-style: none;
+    margin-bottom: 1rem;
 }
 
 /* ===========================
