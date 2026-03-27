@@ -1,5 +1,5 @@
 /* ===========================
-   RESET & GLOBAL STYLES
+   RESET & GLOBAL
 =========================== */
 * {
     margin: 0;
@@ -54,138 +54,24 @@ body {
 }
 
 /* ===========================
-   PAGE CONTENT & OVERLAY
+   PAGE CONTENT
 =========================== */
 .page-content {
-    min-height: 100vh;
-    padding-top: 70px; /* Höhe Navbar berücksichtigen */
+    padding-top: 70px; /* Platz für Navbar */
 }
 
+/* Overlay: Verdunkelung + Hintergrund */
 .overlay {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Hintergrund komplett abdecken */
     background: url("landing_bg.jpg") no-repeat center / cover fixed;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center top;
-    background-repeat: no-repeat;
-    /* leichte Verdunkelung über Overlay-Color */
-    background-blend-mode: darken;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4); /* leichte Verdunkelung */
 }
 
 /* ===========================
-   CENTER CONTAINER
-=========================== */
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-    text-align: center;
-    padding: 0 20px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.no-scroll {
-    overflow: auto; /* scrollen erlauben */
-}
-
-/* ===========================
-   TITLES
-=========================== */
-h1 {
-    font-size: 4rem;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-/* ===========================
-   BUTTONS
-=========================== */
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-    border: 2px solid red;
-    transition: 0.3s;
-    background: rgba(0,0,0,0.6);
-}
-
-.btn:hover {
-    background: red;
-    color: black;
-}
-
-/* ===========================
-   DISCORD PAGE
-=========================== */
-.discord-page .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* ===========================
-   ABOUT PAGE SCROLL EFFECTS
-=========================== */
-.about-section {
-    height: 50vh;
-    position: relative;
-    overflow: hidden;
-    background: url("landing_bg.jpg") no-repeat center / cover fixed;
-}
-
-.about-scroll-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.95);
-    transform: translateY(100%);
-    transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-
-.about-scroll-bg.scrolled {
-    transform: translateY(0);
-}
-
-.about-text {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    font-size: 1.3rem;
-    line-height: 1.7;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    opacity: 0;
-    transform: translateY(4rem);
-    transition: all 0.8s ease-out 0.3s;
-}
-
-.about-text.scrolled {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ===========================
-   RULES PAGE
+   CONTAINER & CONTENT
 =========================== */
 .rules-page .content {
     max-width: 1000px;
@@ -250,24 +136,69 @@ h1 {
    MEDIA QUERIES
 =========================== */
 @media (max-width:768px) {
-    h1 {
-        font-size: 2.5rem !important;
-    }
-
     .rules-page .content {
         padding: 2rem 1rem;
     }
-
     .rules-page .content h1 {
         font-size: 2rem;
     }
-
     .rules-page .content h2 {
         font-size: 1.4rem;
     }
+}
 
+/* ===========================
+   Sonstige Seiten (About / Discord)
+=========================== */
+.about-section {
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    background: url("landing_bg.jpg") no-repeat center / cover fixed;
+}
+
+.about-scroll-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    transform: translateY(100%);
+    transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.about-scroll-bg.scrolled {
+    transform: translateY(0);
+}
+
+.about-text {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    opacity: 0;
+    transform: translateY(4rem);
+    transition: all 0.8s ease-out 0.3s;
+}
+
+.about-text.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width:768px) {
     .about-text {
         font-size: 1.1rem;
         padding: 2rem 1rem;
+    }
+    h1 {
+        font-size: 2.5rem !important;
     }
 }
