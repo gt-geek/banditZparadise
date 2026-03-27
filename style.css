@@ -80,7 +80,7 @@ position: fixed; /* bleibt beim Scrollen oben */
     text-decoration: none;
     margin: 0 20px;
     padding: 10px 20px;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 5px;
     transition: 0.3s;
 }
@@ -92,7 +92,7 @@ position: fixed; /* bleibt beim Scrollen oben */
 
 /* ABOUT SCROLL-EFFEKTE */
 .about-section {
-    height: 100vh;
+    height: 50vh;
     background: url("landing_bg.jpg") no-repeat center / cover fixed !important;
     position: relative;
     overflow: hidden;
