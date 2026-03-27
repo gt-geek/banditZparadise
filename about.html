@@ -20,7 +20,7 @@ html,body {margin:0;height:100%;background: url("landing_bg.jpg") center/cover f
 <nav class="navbar">
 <a href="index.html">Home</a><a href="rules.html">Rules</a><a href="discord.html">Discord</a>
 </nav>
-<section style="height:100vh;">
+<section style="height:150vh;">
 <div id="about-bg"></div>
 <div id="about-text">
 
@@ -39,7 +39,7 @@ html,body {margin:0;height:100%;background: url("landing_bg.jpg") center/cover f
 let triggered = false;
 window.addEventListener('scroll', () => {
   if (triggered) return;
-  if (window.scrollY > 100) {  // Früher bei 100px Scroll
+  if (window.scrollY > 50) {  // Früher bei 100px Scroll
     document.getElementById('about-bg').classList.add('scrolled');
     document.getElementById('about-text').classList.add('scrolled');
     triggered = true;
