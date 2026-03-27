@@ -69,14 +69,14 @@ position: fixed; /* bleibt beim Scrollen oben */
     display: flex;
     justify-content: center; /* Buttons zentrieren horizontal */
     align-items: center;
-    padding: 25px 0;
+    padding: 40px 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* optionaler Schatten */
 }
 
 /* Buttons in Navbar */
 .navbar a {
-    color: red;
+    color: white;
     text-decoration: none;
     margin: 0 20px;
     padding: 10px 20px;
