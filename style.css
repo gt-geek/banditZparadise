@@ -9,13 +9,25 @@ html, body {
     height: 100%;
 }
 
-/* BODY */
+/* BODY – KEIN HINTERGRUND UND KEIN PADDING */
 body {
     min-height: 100vh;
-    background: url("landing_bg.jpg") no-repeat center / cover fixed;
+    margin: 0;
+    padding: 0;
     color: white;
+}
 
-    padding-top: 80px; /* Platz für feste Navbar (80px) */
+/* HINTERGRUND – komplett unter der Navbar */
+.page-content {
+    min-height: 100vh;
+    background: url("landing_bg.jpg") no-repeat center / cover fixed;
+}
+
+/* Overlay über dem Hintergrund */
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
+    width: 100%;
 }
 
 /* Center content */
@@ -24,7 +36,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px); /* berücksichtigt Navbar */
+    min-height: 100vh;      /* 100vh komplett */
     text-align: center;
     padding: 0 20px;
     margin: 0 auto;
@@ -68,11 +80,11 @@ h1 {
     width: 100%;
 
     display: flex;
-    justify-content: center;   /* Buttons horizontal mittig */
-    align-items: center;       /* vertikal zentriert */
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 
-    background-color: black;   /* komplett schwarz */
+    background-color: black;
     padding: 15px 0;
 
     z-index: 1000;
@@ -94,12 +106,9 @@ h1 {
     color: black;
 }
 
-/* ENTFERNT – Startseite‑Spezial (nicht mehr nötig) */
-/* .home-page .navbar { ... } */
-
-/* Für die Discord-Seite – nur Inhalt, keine Navbar-Änderung */
+/* Für die Discord‑Seite – nur Inhalt, keine Navbar‑Änderung */
 .discord-page .container {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
