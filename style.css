@@ -15,14 +15,7 @@ body {
     background: url("landing_bg.jpg") no-repeat center / cover fixed;
     color: white;
 
-    padding-top: 80px; /* Platz für feste Navbar */
-}
-
-/* Dark overlay 
-.overlay {
-    background: rgba(0, 0, 0, 0.4);
-    min-height: 100vh;
-    width: 100%; */
+    padding-top: 80px; /* Platz für feste Navbar (80px) */
 }
 
 /* Center content */
@@ -33,6 +26,9 @@ body {
     align-items: center;
     min-height: calc(100vh - 80px); /* berücksichtigt Navbar */
     text-align: center;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .no-scroll {
@@ -56,7 +52,7 @@ h1 {
     color: white;
     border: 2px solid red;
     transition: 0.3s;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .btn:hover {
@@ -64,7 +60,7 @@ h1 {
     color: black;
 }
 
-/* NAVBAR STANDARD (IMMER OBEN) */
+/* EINHEITLICHE NAVBAR – für ALLE Seiten */
 .navbar {
     position: fixed;
     top: 0;
@@ -72,38 +68,15 @@ h1 {
     width: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: center;   /* Buttons horizontal mittig */
+    align-items: center;       /* vertikal zentriert */
     gap: 20px;
 
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: black;   /* komplett schwarz */
     padding: 15px 0;
 
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-/* STARTSEITE SPEZIAL (MITTE) */
-.home-page .navbar {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    padding: 15px 25px;
-    border-radius: 10px;
-}
-
-/* Für die Discord-Seite */
-.discord-page .container {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;           /* Optional: etwas Rand */
-    margin: 0 auto;            /* Center im Viewport */
-    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Buttons in Navbar */
@@ -121,6 +94,22 @@ h1 {
     color: black;
 }
 
+/* ENTFERNT – Startseite‑Spezial (nicht mehr nötig) */
+/* .home-page .navbar { ... } */
+
+/* Für die Discord-Seite – nur Inhalt, keine Navbar-Änderung */
+.discord-page .container {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
 /* ABOUT SCROLL-EFFEKTE */
 .about-section {
     height: 50vh;
@@ -131,11 +120,13 @@ h1 {
 
 .about-scroll-bg {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
-    background: rgba(0,0,0,0.95);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
     transform: translateY(100%);
-    transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .about-scroll-bg.scrolled {
@@ -152,7 +143,7 @@ h1 {
     line-height: 1.7;
     font-weight: 700;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     opacity: 0;
     transform: translateY(4rem);
     transition: all 0.8s ease-out 0.3s;
@@ -164,6 +155,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    .about-text { font-size: 1.1rem; padding: 2rem 1rem; }
-    h1 { font-size: 2.5rem !important; }
+    .about-text {
+        font-size: 1.1rem;
+        padding: 2rem 1rem;
+    }
+    h1 {
+        font-size: 2.5rem !important;
+    }
 }
