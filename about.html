@@ -1,5 +1,3 @@
-Neue About
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,19 +9,20 @@ html, body {
     background: url("landing_bg.jpg") center/cover fixed;
     font-family: Arial, sans-serif;
     color: white;
+    scroll-behavior: smooth;
 }
 
-/* Overlay für Hintergrundeffekt */
+/* Overlay für sanften Fade-Effekt */
 #about-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5); /* leicht transparent */
+    background: rgba(0,0,0,0.0); /* startet transparent */
     z-index: 1;
-    pointer-events: none; /* scrollbar funktioniert normal */
-    transition: background 0.5s;
+    pointer-events: none;
+    transition: background 0.3s ease-out;
 }
 
 /* Textbereich direkt sichtbar */
@@ -38,8 +37,10 @@ html, body {
     font-weight: bold;
     text-align: center;
     color: white;
-    background: rgba(0,0,0,0.5); /* leichter schwarzer Hintergrund */
-    border-radius: 10px;
+    background: rgba(0,0,0,0.4); /* leicht transparenter schwarzer Hintergrund */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: background 0.5s ease;
 }
 
 /* Buttons */
@@ -48,7 +49,7 @@ html, body {
     padding: 12px 30px;
     color: white;
     border: 2px solid red;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
@@ -111,15 +112,15 @@ html, body {
 </section>
 
 <script>
-// Overlay dunkler/heller je nach Scroll
+// Sanfter Fade-In Overlay Effekt beim Scrollen
 const bg = document.getElementById('about-bg');
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY;
-    // Mehr scroll = dunkler Overlay, weniger scroll = transparenter
-    bg.style.background = `rgba(0,0,0,${0.2 + Math.min(scrollTop/500, 0.5)})`;
+    // Overlay-Farbe von transparent (0) zu dunkel (0.5) abhängig von Scrollhöhe
+    let opacity = Math.min(scrollTop / 600, 0.5); // langsamer Übergang
+    bg.style.background = `rgba(0,0,0,${opacity})`;
 });
 </script>
 
 </body>
 </html>
-
