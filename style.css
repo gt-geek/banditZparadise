@@ -9,25 +9,26 @@ html, body {
     height: 100%;
 }
 
-/* BODY – KEIN HINTERGRUND UND KEIN PADDING */
+/* BODY – Hintergrund und Textfarbe */
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     color: white;
+    background: url("landing_bg.jpg") no-repeat center / cover fixed;
 }
 
-/* HINTERGRUND – komplett unter der Navbar */
+/* BODY Overlay für Verdunkelung */
 .page-content {
     min-height: 100vh;
-    background: url("landing_bg.jpg") no-repeat center / cover fixed;
+    padding-top: 70px; /* Höhe Navbar berücksichtigen */
 }
 
 /* Overlay über dem Hintergrund */
 .overlay {
     background: rgba(0, 0, 0, 0.4);
-    min-height: 100vh;
     width: 100%;
+    min-height: calc(100vh - 70px); /* Höhe Navbar abziehen */
 }
 
 /* Center content */
@@ -36,15 +37,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;      /* 100vh komplett */
+    min-height: calc(100vh - 70px); /* Höhe Navbar abziehen */
     text-align: center;
     padding: 0 20px;
     margin: 0 auto;
     width: 100%;
 }
 
+/* Scroll erlauben */
 .no-scroll {
-    overflow: hidden;
+    overflow: auto; /* vorher hidden – jetzt scroll */
 }
 
 /* Title */
@@ -78,15 +80,12 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-
     background-color: black;
     padding: 15px 0;
-
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -106,9 +105,9 @@ h1 {
     color: black;
 }
 
-/* Für die Discord‑Seite – nur Inhalt, keine Navbar‑Änderung */
+/* Discord-Seite */
 .discord-page .container {
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,7 +118,7 @@ h1 {
     width: 100%;
 }
 
-/* ABOUT SCROLL-EFFEKTE */
+/* About Scroll-Effekte */
 .about-section {
     height: 50vh;
     background: url("landing_bg.jpg") no-repeat center / cover fixed !important;
@@ -172,7 +171,8 @@ h1 {
         font-size: 2.5rem !important;
     }
 }
-/* Rules‑Seite – nur Inhalt innen */
+
+/* Rules-Seite – Content innen */
 .rules-page .content {
     max-width: 1000px;
     margin: 2rem auto;
