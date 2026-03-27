@@ -12,13 +12,12 @@ html, body {
     height: 100%;
 }
 
-/* BODY – Hintergrund & Textfarbe */
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     color: white;
-    overflow-x: hidden;
+    overflow-x: hidden; /* horizontal scroll verhindern */
 }
 
 /* ===========================
@@ -60,18 +59,48 @@ body {
     padding-top: 70px; /* Platz für Navbar */
 }
 
-/* Overlay: Verdunkelung + Hintergrund */
+/* Overlay: Hintergrund + Verdunkelung */
 .overlay {
     position: relative;
     width: 100%;
-    background: url("./landing_bg.jpg") no-repeat center / cover fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: rgba(0,0,0,0.4); /* leichte Verdunkelung */
+    min-height: 100vh; /* flexibel */
+    background: url("./landing_bg.jpg") no-repeat center top / cover fixed;
+    background-color: rgba(0,0,0,0.4); /* Verdunkelung */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Container für allgemeine Inhalte */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid red;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.6);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: red;
+    color: black;
 }
 
 /* ===========================
-   CONTAINER & CONTENT
+   RULES PAGE
 =========================== */
 .rules-page .content {
     max-width: 1000px;
@@ -133,28 +162,13 @@ body {
 }
 
 /* ===========================
-   MEDIA QUERIES
-=========================== */
-@media (max-width:768px) {
-    .rules-page .content {
-        padding: 2rem 1rem;
-    }
-    .rules-page .content h1 {
-        font-size: 2rem;
-    }
-    .rules-page .content h2 {
-        font-size: 1.4rem;
-    }
-}
-
-/* ===========================
-   Sonstige Seiten (About / Discord)
+   ABOUT / DISCORD PAGES
 =========================== */
 .about-section {
     height: 50vh;
     position: relative;
     overflow: hidden;
-    background: url("landing_bg.jpg") no-repeat center / cover fixed;
+    background: url("./landing_bg.jpg") no-repeat center / cover fixed;
 }
 
 .about-scroll-bg {
@@ -193,12 +207,28 @@ body {
     transform: translateY(0);
 }
 
+/* ===========================
+   MEDIA QUERIES
+=========================== */
 @media (max-width:768px) {
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+    .rules-page .content {
+        padding: 2rem 1rem;
+    }
+    .rules-page .content h1 {
+        font-size: 2rem;
+    }
+    .rules-page .content h2 {
+        font-size: 1.4rem;
+    }
     .about-text {
         font-size: 1.1rem;
         padding: 2rem 1rem;
-    }
-    h1 {
-        font-size: 2.5rem !important;
     }
 }
