@@ -78,7 +78,6 @@ body {
     width: 100%;
     min-height: 100vh;
     background: url("./landing_bg.jpg") center top / cover fixed;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +100,6 @@ body {
 
 /* ===========================
    UNIVERSAL CONTENT BOX
-   (für Rules, Imprint, Terms)
 =========================== */
 .content-box {
     max-width: 1000px;
@@ -112,6 +110,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
+/* Überschriften */
 .content-box h1,
 .content-box h2,
 .content-box h3 {
@@ -133,14 +132,66 @@ body {
     font-size: 1.4rem;
 }
 
+/* Text */
 .content-box p {
     margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-.content-box ul {
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+/* ===========================
+   RULES (CUSTOM LIST DESIGN)
+=========================== */
+.rules-page ul,
+.rules-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rules-page li,
+.rules-content li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.rules-page li::before,
+.rules-content li::before {
+    content: "•";
+    color: #f58442;
+    position: absolute;
+    left: 0;
+}
+
+/* ===========================
+   LEGAL PAGES (Imprint, Terms)
+=========================== */
+.legal-page {
+    text-align: center;
+}
+
+.legal-page p {
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+}
+
+/* ===========================
+   CONTACT PAGE
+=========================== */
+.contact-box {
+    text-align: center;
+}
+
+.contact-box p {
+    font-size: 1.2rem;
+}
+
+.contact-box a {
+    color: #f58442;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
 }
 
 /* ===========================
@@ -161,27 +212,6 @@ body {
 
 .btn:hover {
     border-color: #f58442;
-}
-
-/* ===========================
-   CONTACT PAGE
-=========================== */
-.contact-box {
-    text-align: center;
-}
-
-.contact-box p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.contact-box a {
-    color: #f58442;
-    text-decoration: none;
-}
-
-.contact-box a:hover {
-    text-decoration: underline;
 }
 
 /* ===========================
