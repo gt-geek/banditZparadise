@@ -220,8 +220,8 @@ body {
    ABOUT SECTION
 =========================== */
 .about-section {
-    min-height: calc(100vh - 100px - 100px);
-    padding-top: 100px; /* mehr Abstand oben */
+    min-height: 70vh
+    padding-top: 50px; /* mehr Abstand oben */
     padding-bottom: 50px; /* optional */
     background: url("./landing_bg.jpg") center top / cover fixed;
     display: flex;
@@ -232,7 +232,7 @@ body {
 
 .about-text {
     max-width: 900px;
-    height: 120vh; /* Kasten-Höhe */
+    height: auto; /* Kasten-Höhe */
     margin: 0 auto;
     padding: 2rem;
     font-size: 1.2rem;
