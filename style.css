@@ -68,10 +68,12 @@ body {
 =========================== */
 .page-content {
     padding-top: 120px;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===========================
-   BACKGROUND (Landing)
+   OVERLAY / BACKGROUND
 =========================== */
 .overlay {
     position: relative;
@@ -108,9 +110,9 @@ body {
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-/* Überschriften */
 .content-box h1,
 .content-box h2,
 .content-box h3 {
@@ -119,7 +121,6 @@ body {
 }
 
 .content-box h1 {
-    text-align: center;
     font-size: 3rem;
 }
 
@@ -132,14 +133,13 @@ body {
     font-size: 1.4rem;
 }
 
-/* Text */
 .content-box p {
     margin-bottom: 1rem;
     line-height: 1.6;
 }
 
 /* ===========================
-   RULES (CUSTOM LIST DESIGN)
+   RULES CUSTOM LIST
 =========================== */
 .rules-page ul,
 .rules-content ul {
@@ -212,13 +212,15 @@ body {
 
 .btn:hover {
     border-color: #f58442;
+    background: #f58442;
+    color: black;
 }
 
 /* ===========================
    ABOUT SECTION
 =========================== */
 .about-section {
-    min-height: calc(100vh - 100px - 100px); /* Navbar + Footer abziehen */
+    min-height: calc(100vh - 100px - 100px); /* Navbar + Footer */
     padding-top: 100px;
     background: url("./landing_bg.jpg") center top / cover fixed;
     display: flex;
@@ -232,6 +234,10 @@ body {
     margin: auto;
     padding: 4rem 2rem;
     font-size: 1.2rem;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
 /* ===========================
@@ -277,7 +283,8 @@ body {
         gap: 20px;
     }
 
-    .content-box {
+    .content-box,
+    .about-text {
         padding: 2rem 1rem;
     }
 
