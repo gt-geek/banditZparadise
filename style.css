@@ -42,7 +42,7 @@ body {
 .logo {
     height: 80px;
     z-index: 2; /* über Buttons, falls nötig */
-   margin-left: 30px; /* Abstand nach rechts */
+   margin-right: 50px; /* Abstand nach links */
 }
 
 /* Buttons mittig */
