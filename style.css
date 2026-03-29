@@ -221,7 +221,7 @@ body {
 =========================== */
 .about-section {
     min-height: calc(100vh - 100px - 100px);
-    padding-top: 150px; /* mehr Abstand oben */
+    padding-top: 100px; /* mehr Abstand oben */
     padding-bottom: 50px; /* optional */
     background: url("./landing_bg.jpg") center top / cover fixed;
     display: flex;
