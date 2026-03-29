@@ -17,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    background-color: black;
     overflow-x: hidden; /* horizontal scroll verhindern */
     overflow-y: auto;   /* vertikal scrollen */
 }
