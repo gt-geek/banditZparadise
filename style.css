@@ -220,19 +220,17 @@ body {
    ABOUT SECTION
 =========================== */
 .about-section {
-    min-height: 70vh
-    padding-top: 50px; /* mehr Abstand oben */
-    padding-bottom: 50px; /* optional */
-    background: url("./landing_bg.jpg") center top / cover fixed;
+    min-height: auto; /* nicht mehr die volle viewporthöhe erzwingen */
+    padding-top: 50px; /* optional, kleiner Abstand oben */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* oben ausrichten */
-    align-items: center; /* horizontal zentriert */
+    align-items: center; /* horizontal zentrieren */
 }
 
 .about-text {
     max-width: 900px;
-    height: auto; /* Kasten-Höhe */
+    height: auto; /* passt sich dem Inhalt an */
     margin: 0 auto;
     padding: 2rem;
     font-size: 1.2rem;
@@ -240,7 +238,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     text-align: center;
-    overflow-y: auto; /* falls Inhalt größer wird, scrollbar */
+    overflow-y: visible; /* nur scrollbar, wenn wirklich nötig */
 }
 
 /* ===========================
