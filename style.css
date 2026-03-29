@@ -193,7 +193,8 @@ body {
 .about-section {
     height: 50vh;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden; */
+   padding-top: 100px; 
     background-image: url("./landing_bg.jpg");
     background-position: center top;
     background-size: cover;
@@ -209,6 +210,7 @@ body {
     background: rgba(0,0,0,0.95);
     transform: translateY(100%);
     transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
+    z-index: 1;
 }
 
 .about-scroll-bg.scrolled {
