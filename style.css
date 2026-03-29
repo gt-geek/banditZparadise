@@ -17,8 +17,8 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    overflow-x: hidden; /* horizontal scroll verhindern */
-    overflow-y: auto;   /* vertikal scrollen */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ===========================
@@ -30,15 +30,22 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Logo links */
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     background-color: black;
-    padding: 30px 0;
+    padding: 30px 40px; /* mehr Platz links/rechts */
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
+/* LOGO */
+.logo {
+    height: 50px;
+    margin-right: 40px;
+}
+
+/* NAV LINKS */
 .navbar a {
     color: white;
     text-decoration: none;
@@ -50,14 +57,14 @@ body {
 
 .navbar a:hover {
     border-color: #f58442;
-    transform: scale(1.05); /* leichter Zoom */
+    transform: scale(1.05);
 }
 
 /* ===========================
    PAGE CONTENT
 =========================== */
 .page-content {
-    padding-top: 70px; /* Platz für Navbar */
+    padding-top: 100px; /* an größere Navbar angepasst */
 }
 
 /* ===========================
@@ -74,13 +81,12 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertikal zentriert */
-    align-items: center;     /* horizontal zentriert */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 2rem;
 }
 
-/* Dunkle Overlay-Schicht über Hintergrund */
 .overlay::after {
     content: "";
     position: absolute;
@@ -92,7 +98,6 @@ body {
     z-index: 1;
 }
 
-/* Container-Inhalt über Overlay */
 .container, .rules-page .content {
     position: relative;
     z-index: 2;
@@ -108,14 +113,14 @@ body {
     font-size: 18px;
     text-decoration: none;
     color: white;
-    border: 2px white;
+    border: 2px solid white; /* FIX */
     border-radius: 6px;
     background: rgba(0,0,0,0.6);
     transition: 0.5s;
 }
 
 .btn:hover {
-    border-color: #f58442; /* deine Wunschfarbe 🔥 */
+    border-color: #f58442;
 }
 
 /* ===========================
@@ -154,17 +159,16 @@ body {
 }
 
 .rules-page .content ul {
-    list-style-type: disc;  /* Nur echte Listen bekommen Punkte */
+    list-style-type: disc;
     padding-left: 2rem;
     margin-bottom: 1rem;
 }
 
-/* Verschachtelte Listen */
 .rules-page .content ul ul {
     list-style-type: circle;
     margin-left: 1.5rem;
 }
-   /* Absätze oder andere Texte sollen keine Punkte bekommen */
+
 .rules-page .content p,
 .rules-page .content h2 + p,
 .rules-page .content h3 + p {
