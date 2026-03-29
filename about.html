@@ -1,153 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About BanditZParadise</title>
-<style>
-/* ===========================
-   GLOBAL / RESET
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Aptos Black, sans-serif;
-}
-
-html, body {
-    height: 100%;
-    background: url("landing_bg.jpg") center top / cover fixed;
-    color: white;
-    scroll-behavior: smooth;
-}
-
-/* ===========================
-   NAVBAR
-=========================== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* gleiche Höhe wie Index/Rules */
-    background-color: black;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    z-index: 1000;
-}
-
-/* Logo links */
-.logo {
-    height: 80px;
-    margin-right: 50px;
-}
-
-/* Buttons mittig */
-.nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-    border-color: #f58442;
-    transform: scale(1.05);
-}
-
-/* ===========================
-   PAGE CONTENT
-=========================== */
-.page-content {
-    padding-top: 100px; /* Platz für Navbar */
-    position: relative;
-    z-index: 2;
-}
-
-/* Overlay Effekt optional */
-#about-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0); /* startet transparent */
-    pointer-events: none;
-    transition: background 0.3s ease-out;
-    z-index: 1;
-}
-
-/* Textcontainer */
-#about-text {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 4rem 2rem;
-    font-size: 22px;
-    line-height: 1.6;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(0,0,0,0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    color: white;
-    border: 1px solid white;
-    background: rgba(0,0,0,0.6);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 2rem;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #f58442;
-    color: black;
-}
-
-/* ===========================
-   MEDIA QUERIES
-=========================== */
-@media (max-width:768px) {
-    #about-text {
-        font-size: 16px;
-        padding: 2rem 1rem;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    .logo {
-        height: 60px;
-        margin-right: 20px;
-    }
-    .nav-links {
-        gap: 15px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>About BanditZParadise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="about-page">
 
-<!-- ===========================
-     NAVBAR MIT LOGO
-=========================== -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <img src="logo.png" class="logo" alt="BanditZParadise Logo">
     <div class="nav-links">
@@ -158,10 +18,11 @@ html, body {
     </div>
 </nav>
 
-<!-- Optionales Overlay für Fade-Effekt -->
-<div id="about-bg"></div>
+<!-- OPTIONAL OVERLAY -->
+<div class="overlay"></div>
 
-<div class="page-content">
+<!-- PAGE CONTENT -->
+<main class="page-content">
     <div class="content-box">
         <h1>BanditZParadise</h1>
         <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
@@ -172,20 +33,10 @@ html, body {
         <p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 🏴‍☠️💀</p>
         <a href="discord.html" class="btn">JOIN THE BANDITZ</a>
     </div>
-</div>
+</main>
 
-<script>
-// Sanfter Fade-In Overlay Effekt beim Scrollen
-const bg = document.getElementById('about-bg');
-window.addEventListener('scroll', () => {
-    let scrollTop = window.scrollY;
-    let opacity = Math.min(scrollTop / 600, 0.8);
-    bg.style.background = `rgba(0,0,0,${opacity})`;
-});
-</script>
-
-</body>
-   <footer class="footer">
+<!-- FOOTER -->
+<footer class="footer">
     <div class="footer-links">
         <a href="terms.html" class="footer-btn">TERMS & CONDITIONS</a>
         <a href="imprint.html" class="footer-btn">IMPRINT</a>
@@ -193,4 +44,6 @@ window.addEventListener('scroll', () => {
     </div>
     <p class="footer-copy">© 2026 BanditZParadise. All rights reserved.</p>
 </footer>
+
+</body>
 </html>
