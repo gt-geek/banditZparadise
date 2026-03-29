@@ -115,8 +115,7 @@ body {
 }
 
 .btn:hover {
-    background: red;
-    color: white;
+    border-color: #f58442; /* deine Wunschfarbe 🔥 */
 }
 
 /* ===========================
