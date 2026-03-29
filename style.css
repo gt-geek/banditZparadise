@@ -231,13 +231,15 @@ body {
 
 .about-text {
     max-width: 900px;
-    margin: auto;
-    padding: 4rem 2rem;
+    height: 60vh; /* Kasten-Höhe */
+    margin: 0 auto;
+    padding: 2rem;
     font-size: 1.2rem;
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     text-align: center;
+    overflow-y: auto; /* falls Inhalt größer wird, scrollbar */
 }
 
 /* ===========================
