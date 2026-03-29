@@ -40,17 +40,17 @@ body {
 }
 
 .navbar a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px 20px;
-    border: 0px solid white;
+    border: 2px solid transparent;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: white;
-    color: white;
+    border-color: white;
+    transform: scale(1.05); /* leichter Zoom */
 }
 
 /* ===========================
