@@ -49,7 +49,7 @@ body {
 }
 
 .navbar a:hover {
-    border-color: white;
+    border-color: #f58442;
     transform: scale(1.05); /* leichter Zoom */
 }
 
@@ -108,7 +108,7 @@ body {
     font-size: 18px;
     text-decoration: none;
     color: white;
-    border: 2px solid red;
+    border: 2px black;
     border-radius: 6px;
     background: rgba(0,0,0,0.6);
     transition: 0.5s;
