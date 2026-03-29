@@ -220,13 +220,14 @@ body {
    ABOUT SECTION
 =========================== */
 .about-section {
-    min-height: calc(100vh - 100px - 100px); /* Navbar + Footer */
-    padding-top: 100px;
+    min-height: calc(100vh - 100px - 100px);
+    padding-top: 150px; /* mehr Abstand oben */
+    padding-bottom: 50px; /* optional */
     background: url("./landing_bg.jpg") center top / cover fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-start; /* oben ausrichten */
+    align-items: center; /* horizontal zentriert */
 }
 
 .about-text {
