@@ -40,7 +40,7 @@ body {
 
 /* Logo links */
 .logo {
-    height: 50px;
+    height: 80px;
     z-index: 2; /* über Buttons, falls nötig */
 }
 
