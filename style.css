@@ -14,12 +14,9 @@ html, body {
 
 body {
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
     color: white;
     background-color: black;
-    overflow-x: hidden; /* horizontal scroll verhindern */
-    overflow-y: auto;   /* vertikal scrollen */
+    overflow-x: hidden;
 }
 
 /* ===========================
@@ -30,7 +27,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* fixe Höhe für Navbar */
+    height: 100px;
     background-color: black;
     display: flex;
     align-items: center;
@@ -39,30 +36,26 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* Logo links */
 .logo {
     height: 80px;
-    z-index: 2; /* über Buttons, falls nötig */
-   margin-right: 50px; /* Abstand nach links */
+    margin-right: 50px;
 }
 
-/* Buttons mittig */
 .nav-links {
-    position: absolute; /* absolut innerhalb Navbar */
+    position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* exakt mittig */
+    transform: translateX(-50%);
     display: flex;
     gap: 30px;
 }
 
-/* Buttons Styling */
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -71,48 +64,83 @@ body {
 }
 
 /* ===========================
-   PAGE CONTENT
+   PAGE LAYOUT
 =========================== */
 .page-content {
-    padding-top: 100px; /* Platz für Navbar */
+    padding-top: 120px;
 }
 
 /* ===========================
-   OVERLAY + BACKGROUND
+   BACKGROUND (Landing)
 =========================== */
 .overlay {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url("./landing_bg.jpg");
-    background-position: center top;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url("./landing_bg.jpg") center top / cover fixed;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertikal zentriert */
-    align-items: center;     /* horizontal zentriert */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 2rem;
 }
 
-/* Dunkle Overlay-Schicht über Hintergrund */
 .overlay::after {
     content: "";
     position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    pointer-events: none;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
     z-index: 1;
 }
 
-/* Container-Inhalt über Overlay */
-.container, .rules-page .content {
+.container {
     position: relative;
     z-index: 2;
+}
+
+/* ===========================
+   UNIVERSAL CONTENT BOX
+   (für Rules, Imprint, Terms)
+=========================== */
+.content-box {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.content-box h1,
+.content-box h2,
+.content-box h3 {
+    color: #f58442;
+    margin-top: 2rem;
+}
+
+.content-box h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.content-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.content-box h3 {
+    font-size: 1.4rem;
+}
+
+.content-box p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.content-box ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* ===========================
@@ -128,149 +156,48 @@ body {
     border: 1px solid white;
     border-radius: 6px;
     background: rgba(0,0,0,0.6);
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    border-color: #f58442; /* Hover-Farbe */
+    border-color: #f58442;
 }
 
 /* ===========================
-   RULES PAGE
+   CONTACT PAGE
 =========================== */
-.rules-page .content {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 3rem 2rem;
-    background: rgba(0,0,0,0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    overflow: visible;
-}
-
-.rules-page .content h1,
-.rules-page .content h2,
-.rules-page .content h3 {
-    color: #f58442;
-    margin-top: 2rem;
-}
-
-.rules-page .content h1 {
+.contact-box {
     text-align: center;
-    font-size: 3rem;
 }
 
-.rules-page .content h2 {
-    font-size: 1.8rem;
+.contact-box p {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
-.rules-page .content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.contact-box a {
+    color: #f58442;
+    text-decoration: none;
 }
 
-.rules-page .content ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-}
-
-.rules-page .content ul ul {
-    list-style-type: circle;
-    margin-left: 1.5rem;
-}
-
-.rules-page .content p,
-.rules-page .content h2 + p,
-.rules-page .content h3 + p {
-    list-style: none;
-    margin-bottom: 1rem;
+.contact-box a:hover {
+    text-decoration: underline;
 }
 
 /* ===========================
-   ABOUT / DISCORD PAGES
+   ABOUT SECTION
 =========================== */
 .about-section {
     height: 50vh;
-    position: relative;
-    /*overflow: hidden; */
-   padding-top: 100px; 
-    background-image: url("./landing_bg.jpg");
-    background-position: center top;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.about-scroll-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    transform: translateY(100%);
-    transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
-    z-index: 1;
-}
-
-.about-scroll-bg.scrolled {
-    transform: translateY(0);
+    padding-top: 100px;
+    background: url("./landing_bg.jpg") center top / cover fixed;
 }
 
 .about-text {
-    position: relative;
-    z-index: 2;
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
     padding: 4rem 2rem;
-    font-size: 1.3rem;
-    line-height: 1.7;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    opacity: 0;
-    transform: translateY(4rem);
-    transition: all 0.8s ease-out 0.3s;
-}
-
-.about-text.scrolled {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ===========================
-   MEDIA QUERIES
-=========================== */
-@media (max-width:768px) {
-    h1 {
-        font-size: 2.5rem !important;
-    }
-    .btn {
-        padding: 10px 25px;
-        font-size: 16px;
-    }
-    .rules-page .content {
-        padding: 2rem 1rem;
-    }
-    .rules-page .content h1 {
-        font-size: 2rem;
-    }
-    .rules-page .content h2 {
-        font-size: 1.4rem;
-    }
-    .about-text {
-        font-size: 1.1rem;
-        padding: 2rem 1rem;
-    }
-
-    /* Navbar mobile Anpassung */
-    .navbar {
-        padding: 20px;
-    }
-    .nav-links {
-        gap: 20px;
-    }
+    font-size: 1.2rem;
 }
 
 /* ===========================
@@ -279,34 +206,28 @@ body {
 .footer {
     width: 100%;
     background-color: black;
-    color: white;
-    padding: 30px 0;
     text-align: center;
+    padding: 30px 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
-    position: relative;
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Abstand zwischen Buttons */
-    flex-wrap: wrap; /* für kleinere Bildschirme */
+    gap: 40px;
+    flex-wrap: wrap;
     margin-bottom: 15px;
 }
 
 .footer-btn {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-    border: none; /* keine Umrandung */
-    background: none; /* kein Hintergrund */
+    transition: 0.3s;
 }
 
 .footer-btn:hover {
-    color: #f58442; /* gleiche Hover-Farbe wie Navbar */
-    transform: scale(1.05);
+    color: #f58442;
 }
 
 .footer-copy {
@@ -315,14 +236,23 @@ body {
 }
 
 /* ===========================
-   FOOTER RESPONSIVE
+   RESPONSIVE
 =========================== */
 @media (max-width:768px) {
-    .footer-links {
+    .nav-links {
         gap: 20px;
     }
-    .footer-btn {
-        padding: 8px 12px;
-        font-size: 14px;
+
+    .content-box {
+        padding: 2rem 1rem;
+    }
+
+    .content-box h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
     }
 }
