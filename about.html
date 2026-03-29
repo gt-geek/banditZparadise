@@ -7,12 +7,61 @@ html, body {
     margin: 0;
     height: 100%;
     background: url("landing_bg.jpg") center/cover fixed;
-    font-family: Arial, sans-serif;
+    font-family: Aptos Black, sans-serif;
     color: white;
     scroll-behavior: smooth;
 }
 
-/* Overlay für sanften Fade-Effekt */
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Logo links */
+.logo {
+    height: 80px;
+    margin-right: 40px; /* Abstand zu Buttons */
+}
+
+/* Buttons mittig */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+/* Buttons Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-color: #f58442;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   PAGE CONTENT
+=========================== */
 #about-bg {
     position: fixed;
     top: 0;
@@ -25,7 +74,6 @@ html, body {
     transition: background 0.3s ease-out;
 }
 
-/* Textbereich direkt sichtbar */
 #about-text {
     position: relative;
     z-index: 2;
@@ -37,7 +85,7 @@ html, body {
     font-weight: bold;
     text-align: center;
     color: white;
-    background: rgba(0,0,0,0.9); /* leicht transparenter schwarzer Hintergrund */
+    background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     transition: background 0.5s ease;
@@ -62,22 +110,9 @@ html, body {
     color: black;
 }
 
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-}
-
-.navbar a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Responsive */
+/* ===========================
+   MEDIA QUERIES
+=========================== */
 @media (max-width:768px) {
     #about-text {
         font-size: 16px;
@@ -86,16 +121,35 @@ html, body {
     h1 {
         font-size: 2rem;
     }
+    .logo {
+        height: 60px;
+        margin-right: 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
 }
 </style>
 </head>
 <body>
 
-</div>
+<!-- ===========================
+     NAVBAR MIT LOGO
+=========================== -->
+<nav class="navbar">
+    <img src="logo.png" class="logo" alt="BanditZParadise Logo">
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="rules.html">RULES</a>
+        <a href="discord.html">DISCORD</a>
+    </div>
+</nav>
 
+<!-- Overlay für sanften Fade-Effekt -->
 <div id="about-bg"></div>
 
-<section style="padding-top:80px;">
+<section style="padding-top:120px;">
   <div id="about-text">
     <h1>BanditZParadise – Survival of the Fittest</h1>
     <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
@@ -113,8 +167,7 @@ html, body {
 const bg = document.getElementById('about-bg');
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY;
-    // Overlay-Farbe von transparent (0) zu dunkel (0.5) abhängig von Scrollhöhe
-    let opacity = Math.min(scrollTop / 600, 0.8); // langsamer Übergang
+    let opacity = Math.min(scrollTop / 600, 0.8);
     bg.style.background = `rgba(0,0,0,${opacity})`;
 });
 </script>
