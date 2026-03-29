@@ -232,7 +232,7 @@ body {
 
 .about-text {
     max-width: 900px;
-    height: 60vh; /* Kasten-Höhe */
+    height: 120vh; /* Kasten-Höhe */
     margin: 0 auto;
     padding: 2rem;
     font-size: 1.2rem;
