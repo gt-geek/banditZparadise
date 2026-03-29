@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>About BanditZParadise</title>
 <style>
-html, body {
+/* ===========================
+   GLOBAL / RESET
+=========================== */
+* {
     margin: 0;
-    height: 100%;
-    background: url("landing_bg.jpg") center/cover fixed;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Aptos Black, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background: url("landing_bg.jpg") center top / cover fixed;
     color: white;
     scroll-behavior: smooth;
 }
@@ -20,11 +29,11 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    padding: 20px 40px;
+    height: 100px; /* gleiche Höhe wie Index/Rules */
     background-color: black;
     display: flex;
     align-items: center;
+    padding: 0 40px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     z-index: 1000;
 }
@@ -32,7 +41,7 @@ html, body {
 /* Logo links */
 .logo {
     height: 80px;
-    margin-right: 40px; /* Abstand zu Buttons */
+    margin-right: 40px;
 }
 
 /* Buttons mittig */
@@ -44,7 +53,6 @@ html, body {
     gap: 30px;
 }
 
-/* Buttons Styling */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -62,21 +70,27 @@ html, body {
 /* ===========================
    PAGE CONTENT
 =========================== */
+.page-content {
+    padding-top: 100px; /* Platz für Navbar */
+    position: relative;
+    z-index: 2;
+}
+
+/* Overlay Effekt optional */
 #about-bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.0); /* startet transparent */
-    z-index: 1;
+    background: rgba(0,0,0,0); /* startet transparent */
     pointer-events: none;
     transition: background 0.3s ease-out;
+    z-index: 1;
 }
 
+/* Textcontainer */
 #about-text {
-    position: relative;
-    z-index: 2;
     max-width: 900px;
     margin: 2rem auto;
     padding: 4rem 2rem;
@@ -84,11 +98,9 @@ html, body {
     line-height: 1.6;
     font-weight: bold;
     text-align: center;
-    color: white;
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: background 0.5s ease;
 }
 
 /* Buttons */
@@ -101,8 +113,8 @@ html, body {
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-    transition: 0.3s;
     margin-top: 2rem;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -146,21 +158,21 @@ html, body {
     </div>
 </nav>
 
-<!-- Overlay für sanften Fade-Effekt -->
+<!-- Optionales Overlay für Fade-Effekt -->
 <div id="about-bg"></div>
 
-<section style="padding-top:120px;">
-  <div id="about-text">
-    <h1>BanditZParadise – Survival of the Fittest</h1>
-    <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
-    <p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
-    <p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZParadise - Rules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
-    <p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules, and further information within our <strong>DISCORD</strong> in the navigation above.</p>
-    <p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
-    <p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 🏴‍☠️💀</p>
-    <a href="discord.html" class="btn">Join the BanditZ</a>
-  </div>
-</section>
+<div class="page-content">
+    <div id="about-text">
+        <h1>BanditZParadise – Survival of the Fittest</h1>
+        <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
+        <p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
+        <p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZParadise - Rules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
+        <p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules, and further information within our <strong>DISCORD</strong> in the navigation above.</p>
+        <p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
+        <p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 🏴‍☠️💀</p>
+        <a href="discord.html" class="btn">Join the BanditZ</a>
+    </div>
+</div>
 
 <script>
 // Sanfter Fade-In Overlay Effekt beim Scrollen
