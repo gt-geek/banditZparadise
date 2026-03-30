@@ -140,27 +140,56 @@ body {
 }
 
 /* ===========================
-   RULES CUSTOM LIST
+   RULES PAGE SPECIFIC
 =========================== */
-.rules-page ul,
-.rules-content ul {
+.rules-page .overlay {
+    background: url("./landing_bg.jpg") center top / auto 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 2rem;
+}
+
+.rules-page .content {
+    background: rgba(0,0,0,0.9);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    color: white;
+}
+
+/* Lists */
+.rules-page ul {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 1rem;
 }
 
-.rules-page li,
-.rules-content li {
-    margin-bottom: 10px;
-    padding-left: 20px;
+.rules-page > .content > ul > li {
     position: relative;
+    padding-left: 25px;
+    margin-bottom: 0.8rem;
 }
 
-.rules-page li::before,
-.rules-content li::before {
+.rules-page > .content > ul > li::before {
     content: "•";
     color: #f58442;
     position: absolute;
     left: 0;
+}
+
+.rules-page li ul {
+    list-style: disc;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 30px;
+}
+
+.rules-page li ul li::before {
+    content: "";
 }
 
 /* ===========================
