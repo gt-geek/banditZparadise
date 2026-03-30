@@ -247,6 +247,10 @@ body.rules-page .overlay .content li ul li::before {
     text-decoration: underline;
 }
 
+body.contact-page .page-content {
+    padding-top: 120px;
+}
+
 /* ===========================
    BUTTONS
 =========================== */
