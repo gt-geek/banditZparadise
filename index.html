@@ -34,7 +34,7 @@
         <div class="server-card">
           <h3>BZP EU1 - Weekend raiding</h3>
           <p>IP: 89.163.146.97:2302</p>
-          <p>Spieler: 12/100</p>
+          <p>Spieler: <span id="player-count">Lade...</span></p>
           <a href="steam://connect/89.163.146.97:2302" class="connect-btn">Connect</a>
         </div>
       </div>
@@ -50,6 +50,22 @@
     </div>
     <p class="footer-copy">© 2026 BanditZParadise. All rights reserved.</p>
 </footer>
+<script>
+async function updatePlayerCount() {
+    try {
+        const res = await fetch('https://api.battlemetrics.com/servers/38448947');
+        const data = await res.json();
+        const players = data.data.attributes.players;
+        const maxPlayers = data.data.attributes.maxPlayers;
+        document.getElementById('player-count').textContent = players + '/' + maxPlayers;
+    } catch (err) {
+        console.error('Fehler beim Laden der Spielerzahl:', err);
+        document.getElementById('player-count').textContent = '0/0';
+    }
+}
 
+updatePlayerCount();
+setInterval(updatePlayerCount, 15000);
+</script>
 </body>
 </html>
