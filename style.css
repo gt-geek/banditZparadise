@@ -96,6 +96,7 @@ body {
 .overlay .container {
     pointer-events: auto; /* Inhalte wieder klickbar */
     position: relative;
+    padding-bottom: 60px;
     z-index: 2;
 }
 
