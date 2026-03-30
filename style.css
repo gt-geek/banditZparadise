@@ -14,8 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;              /* Sticky Footer */
-    flex-direction: column;     /* Sticky Footer */
+    display: flex;
+    flex-direction: column;
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -69,7 +69,7 @@ body {
    PAGE LAYOUT
 =========================== */
 .page-content {
-    flex: 1; /* Sticky Footer */
+    flex: 1;
     padding-top: 0;
     position: relative;
     z-index: 2;
@@ -81,13 +81,14 @@ body {
 .overlay {
     position: relative;
     width: 100%;
-    background: url("./landing_bg.jpg") center top / cover no-repeat;
-    display: flex;                  /* zentriert Content */
+    margin-top: 100px;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     text-align: center;
     padding: 180px 2rem 2rem;
-    min-height: calc(100vh - 100px);
+    background: url("./landing_bg.jpg") center top no-repeat;
+    background-size: cover;   /* Landing/Home perfekt */
 }
 
 .overlay::after {
@@ -104,55 +105,15 @@ body {
 }
 
 /* ===========================
-   UNIVERSAL CONTENT BOX
-=========================== */
-.content-box {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
-    background: rgba(0,0,0,0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    text-align: center;
-}
-
-.content-box h1,
-.content-box h2,
-.content-box h3 {
-    color: #f58442;
-    margin-top: 2rem;
-}
-
-.content-box h1 {
-    font-size: 3rem;
-}
-
-.content-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.content-box h3 {
-    font-size: 1.4rem;
-}
-
-.content-box p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* ===========================
    RULES PAGE
 =========================== */
 body.rules-page .overlay {
-    background-size: auto 100%; /* proportional skalieren */
+    /* WICHTIG: Kein Cover mehr, stattdessen proportional */
+    min-height: auto;              /* Höhe hängt vom Content ab */
+    padding: 120px 2rem 50px;      /* Abstand unter Navbar + unten */
+    background-size: auto 100%;     /* passt Bild proportional an */
     background-position: center top;
     background-repeat: no-repeat;
-    min-height: auto;           /* Höhe vom Content abhängig */
-    padding: 120px 2rem 50px;   /* Abstand oben/unten */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 body.rules-page .overlay .content {
@@ -198,9 +159,7 @@ body.rules-page .overlay .content li ul {
 /* ===========================
    CONTACT PAGE
 =========================== */
-body.contact-page .page-content {
-    padding-top: 120px;
-}
+body.contact-page .page-content { padding-top: 120px; }
 
 .contact-box {
     text-align: center;
@@ -219,9 +178,7 @@ body.contact-page .page-content {
     text-decoration: none;
 }
 
-.contact-box a:hover {
-    text-decoration: underline;
-}
+.contact-box a:hover { text-decoration: underline; }
 
 /* ===========================
    BUTTONS
@@ -295,18 +252,10 @@ body.contact-page .page-content {
     transition: 0.3s;
 }
 
-.server-card:hover {
-    transform: translateY(-5px);
-}
+.server-card:hover { transform: translateY(-5px); }
 
-.server-card h3 {
-    color: #f58442;
-    margin-bottom: 15px;
-}
-
-.server-card p {
-    margin-bottom: 15px;
-}
+.server-card h3 { color: #f58442; margin-bottom: 15px; }
+.server-card p { margin-bottom: 15px; }
 
 .connect-btn {
     display: inline-block;
@@ -348,9 +297,7 @@ body.contact-page .page-content {
     font-weight: bold;
 }
 
-.footer-btn:hover {
-    color: #f58442;
-}
+.footer-btn:hover { color: #f58442; }
 
 .footer-copy {
     font-size: 14px;
@@ -361,21 +308,12 @@ body.contact-page .page-content {
    RESPONSIVE
 =========================== */
 @media (max-width:768px) {
-    .nav-links {
-        gap: 20px;
-    }
+    .nav-links { gap: 20px; }
 
     .content-box,
-    .about-text {
-        padding: 2rem 1rem;
-    }
+    .about-text { padding: 2rem 1rem; }
 
-    .content-box h1 {
-        font-size: 2rem;
-    }
+    .content-box h1 { font-size: 2rem; }
 
-    .btn {
-        padding: 10px 25px;
-        font-size: 16px;
-    }
+    .btn { padding: 10px 25px; font-size: 16px; }
 }
