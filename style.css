@@ -14,8 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;          /* Sticky Footer */
-    flex-direction: column; /* Sticky Footer */
+    display: flex;              /* Sticky Footer */
+    flex-direction: column;     /* Sticky Footer */
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -66,11 +66,10 @@ body {
 }
 
 /* ===========================
-   PAGE CONTENT
+   PAGE LAYOUT
 =========================== */
 .page-content {
     flex: 1; /* Sticky Footer */
-    padding-top: 120px; /* Abstand nach Navbar */
     position: relative;
     z-index: 2;
 }
@@ -81,32 +80,23 @@ body {
 .overlay {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 100px);
-    margin-top: 100px;
+    height: 100vh; /* volle Viewport Höhe */
+    top: 0;
+    left: 0;
     background: url("./landing_bg.jpg") center top / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding: 180px 2rem 2rem;
-
-    /* Overlay blockiert keine Klicks */
-    pointer-events: none;
+    padding-top: 120px; /* Abstand für Navbar */
+    pointer-events: none; /* Hintergrund blockiert keine Klicks */
 }
 
-.overlay .container,
-.overlay .content {
-    pointer-events: auto;
+.overlay .content,
+.overlay .container {
+    pointer-events: auto; /* Inhalte wieder klickbar */
     position: relative;
     z-index: 2;
-}
-
-.overlay::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 1;
 }
 
 /* ===========================
@@ -151,10 +141,13 @@ body {
    RULES PAGE
 =========================== */
 body.rules-page .overlay {
-    min-height: auto;                 /* Höhe hängt vom Content ab */
-    padding: 120px 2rem 50px;         /* Abstand oben + unten */
-    background: url("./landing_bg.jpg") center top no-repeat;
-    background-size: auto 100%;       /* proportional, kein Cover */
+    height: auto;
+    min-height: calc(100vh - 100px);
+    padding-top: 120px;
+    padding-bottom: 50px;
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 body.rules-page .overlay .content {
@@ -190,8 +183,20 @@ body.rules-page .overlay .content li ul {
 }
 
 /* ===========================
+   LEGAL PAGES
+=========================== */
+.legal-page p {
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+}
+
+/* ===========================
    CONTACT PAGE
 =========================== */
+body.contact-page .page-content {
+    padding-top: 120px;
+}
+
 .contact-box {
     text-align: center;
     max-width: 700px;
@@ -238,9 +243,18 @@ body.rules-page .overlay .content li ul {
 /* ===========================
    ABOUT SECTION
 =========================== */
-.about-text {
+.about-section,
+.about-page .page-content {
+    padding-top: 120px; /* Abstand zum Navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text,
+.about-page .content-box {
     max-width: 900px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 2rem;
     font-size: 1.2rem;
     background: rgba(0,0,0,0.9);
@@ -364,7 +378,7 @@ body.rules-page .overlay .content li ul {
     }
 
     .server-card {
-        width: 90%;
-        margin-bottom: 20px;
+        width: 80%;
+        padding: 20px;
     }
 }
