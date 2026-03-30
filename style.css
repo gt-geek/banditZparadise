@@ -151,7 +151,7 @@ body.rules-page .overlay {
     min-height: 100vh;
     display: flex;
     justify-content: flex-start; /* Inhalt oben starten */
-    align-items: flex-start;
+    align-items: left;
     padding: 60px 2rem; /* Abstand oben und Seitenpadding */
 }
 
