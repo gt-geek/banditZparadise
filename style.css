@@ -140,10 +140,10 @@ body {
 }
 
 /* ===========================
-   RULES PAGE SPECIFIC
+   PAGE SPECIFIC
 =========================== */
 
-(body.rules-page .content {
+(body.rules-page .overlay .content {
     background: rgba(0,0,0,0.9); /* dunkle Box für Lesbarkeit */
     padding: 3rem 2rem;
     border-radius: 12px;
