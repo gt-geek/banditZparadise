@@ -146,7 +146,7 @@ body.rules-page .overlay {
     background: url("./landing_bg.jpg") center top / auto 100%; /* Hintergrund richtig skalieren */
     min-height: 100vh;
     display: flex;
-    justify-content: center; /* horizontal zentrieren */
+    justify-content: left; /* horizontal zentrieren */
     align-items: flex-start;  /* Inhalt oben starten */
     padding: 60px 2rem;       /* Abstand oben und Seitenpadding */
 }
