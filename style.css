@@ -14,8 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;              /* Sticky Footer */
-    flex-direction: column;     /* Sticky Footer */
+    display: flex;
+    flex-direction: column;
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -69,28 +69,33 @@ body {
    PAGE LAYOUT
 =========================== */
 .page-content {
-    flex: 1; /* Sticky Footer */
+    flex: 1;
     padding-top: 0;
     position: relative;
     z-index: 2;
 }
 
 /* ===========================
-   OVERLAY / BACKGROUND
+   OVERLAY / BACKGROUND (FIXED)
 =========================== */
 .overlay {
     position: relative;
     width: 100%;
     margin-top: 100px;
-    min-height: calc(100vh - 100px);
-    background: url("./landing_bg.jpg") center top / cover;
+
+    height: calc(100vh - 100px); /* FIX: feste Höhe */
+    background: url("./landing_bg.jpg") center center / cover no-repeat;
+
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* sauber zentriert */
     text-align: center;
-    padding: 180px 2rem 2rem;
+    padding: 2rem;
+
+    overflow: hidden; /* verhindert Stretch */
 }
 
+/* dunkler Overlay Effekt */
 .overlay::after {
     content: "";
     position: absolute;
@@ -102,6 +107,13 @@ body {
 .container {
     position: relative;
     z-index: 2;
+}
+
+/* ===========================
+   RULES PAGE FIX (WICHTIG)
+=========================== */
+body.rules-page .overlay {
+    height: 400px; /* feste Hero-Höhe */
 }
 
 /* ===========================
@@ -143,7 +155,7 @@ body {
 }
 
 /* ===========================
-   RULES PAGE
+   RULES CONTENT
 =========================== */
 body.rules-page .overlay .content {
     background: rgba(0,0,0,0.9);
