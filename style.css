@@ -14,6 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
+    display: flex;              /* Sticky Footer */
+    flex-direction: column;     /* Sticky Footer */
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -31,7 +33,7 @@ body {
     background-color: black;
     display: flex;
     align-items: center;
-    padding: 0 40px; /* FIX: kein vertikales padding */
+    padding: 0 40px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
@@ -67,7 +69,8 @@ body {
    PAGE LAYOUT
 =========================== */
 .page-content {
-    padding-top: 0; /* FIX: kein Abstand mehr hier */
+    flex: 1; /* Sticky Footer */
+    padding-top: 0;
     position: relative;
     z-index: 2;
 }
@@ -78,14 +81,14 @@ body {
 .overlay {
     position: relative;
     width: 100%;
-    margin-top: 100px; /* exakt Navbar-Höhe */
-    min-height: calc(100vh - 100px); /* kein Gap mehr */
+    margin-top: 100px;
+    min-height: calc(100vh - 100px);
     background: url("./landing_bg.jpg") center top / cover;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* FIX: nicht mehr zentriert */
+    align-items: flex-start;
     text-align: center;
-    padding: 180px 2rem 2rem; /* Content weiter runter */
+    padding: 180px 2rem 2rem;
 }
 
 .overlay::after {
@@ -106,7 +109,7 @@ body {
 =========================== */
 .content-box {
     max-width: 1000px;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 3rem 2rem;
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
@@ -140,24 +143,20 @@ body {
 }
 
 /* ===========================
-   PAGE SPECIFIC
+   RULES PAGE
 =========================== */
-
 body.rules-page .overlay .content {
-    background: rgba(0,0,0,0.9); /* dunkle Box für Lesbarkeit */
+    background: rgba(0,0,0,0.9);
     padding: 3rem 2rem;
     border-radius: 12px;
     max-width: 1000px;
     margin: 0 auto;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    color: white;
 }
 
-/* Listen sauber formatieren */
 body.rules-page .overlay .content ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 1rem;
 }
 
 body.rules-page .overlay .content > ul > li {
@@ -175,53 +174,12 @@ body.rules-page .overlay .content > ul > li::before {
 
 body.rules-page .overlay .content li ul {
     list-style: disc;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
     padding-left: 30px;
 }
-
-body.rules-page .overlay .content li ul li::before {
-    content: "";
-}
-
-/* Lists */
-.rules-page ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1rem;
-}
-
-.rules-page > .content > ul > li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 0.8rem;
-}
-
-.rules-page > .content > ul > li::before {
-    content: "•";
-    color: #f58442;
-    position: absolute;
-    left: 0;
-}
-
-.rules-page li ul {
-    list-style: disc;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding-left: 30px;
-}
-
-.rules-page li ul li::before {
-    content: "";
-} 
 
 /* ===========================
    LEGAL PAGES
 =========================== */
-.legal-page {
-    text-align: center;
-}
-
 .legal-page p {
     max-width: 600px;
     margin: 0 auto 1rem auto;
@@ -230,12 +188,20 @@ body.rules-page .overlay .content li ul li::before {
 /* ===========================
    CONTACT PAGE
 =========================== */
+body.contact-page .page-content {
+    padding-top: 120px;
+}
+
 .contact-box {
     text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .contact-box p {
     font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .contact-box a {
@@ -245,10 +211,6 @@ body.rules-page .overlay .content li ul li::before {
 
 .contact-box a:hover {
     text-decoration: underline;
-}
-
-body.contact-page .page-content {
-    padding-top: 120px;
 }
 
 /* ===========================
@@ -277,8 +239,7 @@ body.contact-page .page-content {
    ABOUT SECTION
 =========================== */
 .about-section {
-    min-height: auto;
-    padding-top: 60px; /* angepasst an neue Navbar */
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,10 +257,67 @@ body.contact-page .page-content {
 }
 
 /* ===========================
+   SERVER SECTION
+=========================== */
+.server-section {
+    padding: 80px 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+.server-section h2 {
+    color: #f58442;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.server-container {
+    display: flex;
+    justify-content: center;
+}
+
+.server-card {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    padding: 40px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+}
+
+.server-card h3 {
+    color: #f58442;
+    margin-bottom: 15px;
+}
+
+.server-card p {
+    margin-bottom: 15px;
+}
+
+.connect-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #f58442;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: #fff;
+    color: #f58442;
+}
+
+/* ===========================
    FOOTER
 =========================== */
 .footer {
-    width: 100%;
     background-color: black;
     text-align: center;
     padding: 30px 0;
@@ -318,7 +336,6 @@ body.contact-page .page-content {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .footer-btn:hover {
@@ -328,69 +345,6 @@ body.contact-page .page-content {
 .footer-copy {
     font-size: 14px;
     color: #aaa;
-}
-
-/* ===========================
-   SERVER SECTION EIN SERVER
-=========================== */
-.server-section {
-    padding: 80px 20px;
-    background-color: #000; /* schwarzer Hintergrund */
-    text-align: center;
-}
-
-.server-section h2 {
-    color: #f58442;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.server-container {
-    display: flex;
-    justify-content: center;
-}
-
-.server-card {
-    background: rgba(20, 20, 20, 0.9);
-    border-radius: 12px;
-    padding: 40px 40px;
-    width: 300px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.server-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
-}
-
-.server-card h3 {
-    color: #f58442;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.server-card p {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.connect-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    border-radius: 6px;
-    text-decoration: none;
-    background-color: #f58442;
-    color: black;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background 0.3s, color 0.3s;
-}
-
-.connect-btn:hover {
-    background-color: #fff;
-    color: #f58442;
 }
 
 /* ===========================
