@@ -14,8 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;              /* Sticky Footer */
-    flex-direction: column;     
+    display: flex;
+    flex-direction: column;
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -69,7 +69,7 @@ body {
    PAGE LAYOUT
 =========================== */
 .page-content {
-    flex: 1; /* Sticky Footer */
+    flex: 1;
     padding-top: 0;
     position: relative;
     z-index: 2;
@@ -81,13 +81,14 @@ body {
 .overlay {
     position: relative;
     width: 100%;
-    margin-top: 100px; /* Abstand zur Navbar */
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     text-align: center;
     padding: 180px 2rem 2rem;
-    background: url("./landing_bg.jpg") center top / cover no-repeat fixed;
+    background: url("./landing_bg.jpg") center top no-repeat;
+    background-size: cover;   /* Landing/Home perfekt */
 }
 
 .overlay::after {
@@ -107,39 +108,14 @@ body {
    RULES PAGE
 =========================== */
 body.rules-page .overlay {
-    min-height: auto;      /* Kein Fullscreen */
-    padding: 120px 2rem 2rem;
-    background-attachment: scroll; /* verhindert "Rangezoom" beim Laden */
+    /* WICHTIG: Kein Cover mehr, stattdessen proportional */
+    min-height: auto;              /* Höhe hängt vom Content ab */
+    padding: 120px 2rem 50px;      /* Abstand unter Navbar + unten */
+    background-size: auto 100%;     /* passt Bild proportional an */
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
-/* ===========================
-   UNIVERSAL CONTENT BOX
-=========================== */
-.content-box {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
-    background: rgba(0,0,0,0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    text-align: center;
-}
-
-.content-box h1,
-.content-box h2,
-.content-box h3 {
-    color: #f58442;
-    margin-top: 2rem;
-}
-
-.content-box h1 { font-size: 3rem; }
-.content-box h2 { font-size: 1.8rem; margin-bottom: 1rem; }
-.content-box h3 { font-size: 1.4rem; }
-.content-box p { margin-bottom: 1rem; line-height: 1.6; }
-
-/* ===========================
-   RULES CONTENT
-=========================== */
 body.rules-page .overlay .content {
     background: rgba(0,0,0,0.9);
     padding: 3rem 2rem;
@@ -276,15 +252,9 @@ body.contact-page .page-content { padding-top: 120px; }
     transition: 0.3s;
 }
 
-.server-card:hover {
-    transform: translateY(-5px);
-}
+.server-card:hover { transform: translateY(-5px); }
 
-.server-card h3 {
-    color: #f58442;
-    margin-bottom: 15px;
-}
-
+.server-card h3 { color: #f58442; margin-bottom: 15px; }
 .server-card p { margin-bottom: 15px; }
 
 .connect-btn {
@@ -327,9 +297,7 @@ body.contact-page .page-content { padding-top: 120px; }
     font-weight: bold;
 }
 
-.footer-btn:hover {
-    color: #f58442;
-}
+.footer-btn:hover { color: #f58442; }
 
 .footer-copy {
     font-size: 14px;
