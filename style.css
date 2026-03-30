@@ -222,7 +222,7 @@ body {
 =========================== */
 .about-section {
     min-height: auto;
-    padding-top: 150px; /* angepasst an neue Navbar */
+    padding-top: 60px; /* angepasst an neue Navbar */
     display: flex;
     flex-direction: column;
     align-items: center;
