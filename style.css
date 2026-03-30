@@ -75,6 +75,13 @@ body {
 }
 
 /* ===========================
+   PAGE CONTENT SPACING
+=========================== */
+body.about-page .page-content {
+    padding-top: 120px; /* Navbar-Höhe + kleiner Abstand */
+}
+
+/* ===========================
    OVERLAY / BACKGROUND
 =========================== */
 /* Global overlay für Landing / About / Imprint */
