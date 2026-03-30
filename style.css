@@ -110,7 +110,7 @@ body {
     background: rgba(0,0,0,0.9);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    text-align: center;
+    text-align: left;
 }
 
 .content-box h1,
@@ -123,11 +123,13 @@ body {
 
 .content-box h1 {
     font-size: 3rem;
+    padding: 25px;
 }
 
 .content-box h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    padding: 25px;
 }
 
 .content-box h3 {
