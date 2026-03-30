@@ -108,12 +108,11 @@ body {
    RULES PAGE
 =========================== */
 body.rules-page .overlay {
-    /* WICHTIG: Kein Cover mehr, stattdessen proportional */
-    min-height: auto;              /* Höhe hängt vom Content ab */
-    padding: 120px 2rem 50px;      /* Abstand unter Navbar + unten */
-    background-size: auto 100%;     /* passt Bild proportional an */
-    background-position: center top;
-    background-repeat: no-repeat;
+    background: url("./landing_bg.jpg") center top no-repeat;
+    background-size: auto 100%; /* proportional zur Höhe */
+    padding: 120px 2rem 50px;   /* Abstand oben/unten */
+    min-height: auto;           /* Höhe hängt vom Content ab */
+    display: block;             /* kein flex wie Landing */
 }
 
 body.rules-page .overlay .content {
@@ -121,7 +120,7 @@ body.rules-page .overlay .content {
     padding: 3rem 2rem;
     border-radius: 12px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto; /* Abstand unten für Footer */
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
@@ -146,14 +145,6 @@ body.rules-page .overlay .content > ul > li::before {
 body.rules-page .overlay .content li ul {
     list-style: disc;
     padding-left: 30px;
-}
-
-/* ===========================
-   LEGAL PAGES
-=========================== */
-.legal-page p {
-    max-width: 600px;
-    margin: 0 auto 1rem auto;
 }
 
 /* ===========================
