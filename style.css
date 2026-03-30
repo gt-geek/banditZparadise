@@ -79,7 +79,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url("./landing_bg.jpg") center top / cover fixed;
+    background: url("./landing_bg.jpg") center top / cover;
     display: flex;
     justify-content: center;
     align-items: center;
