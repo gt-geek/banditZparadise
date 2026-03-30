@@ -327,6 +327,69 @@ body.rules-page .overlay .content li ul li::before {
 }
 
 /* ===========================
+   SERVER SECTION EIN SERVER
+=========================== */
+.server-section {
+    padding: 80px 20px;
+    background-color: #000; /* schwarzer Hintergrund */
+    text-align: center;
+}
+
+.server-section h2 {
+    color: #f58442;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.server-container {
+    display: flex;
+    justify-content: center;
+}
+
+.server-card {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+}
+
+.server-card h3 {
+    color: #f58442;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.server-card p {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.connect-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #f58442;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: #fff;
+    color: #f58442;
+}
+
+/* ===========================
    RESPONSIVE
 =========================== */
 @media (max-width:768px) {
