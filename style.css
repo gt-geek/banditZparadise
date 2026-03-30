@@ -349,7 +349,7 @@ body.rules-page .overlay .content li ul li::before {
 .server-card {
     background: rgba(20, 20, 20, 0.9);
     border-radius: 12px;
-    padding: 40px 30px;
+    padding: 40px 40px;
     width: 300px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
