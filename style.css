@@ -142,18 +142,6 @@ body {
 /* ===========================
    RULES PAGE SPECIFIC
 =========================== */
-body.rules-page .overlay {
-    background-image: url("./landing_bg.jpg") !important;
-    background-position: center top !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-start; /* Inhalt oben starten */
-    align-items: left;
-    padding: 60px 2rem; /* Abstand oben und Seitenpadding */
-}
 
 body.rules-page .overlay .content {
     background: rgba(0,0,0,0.9); /* dunkle Box für Lesbarkeit */
