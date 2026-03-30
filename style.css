@@ -143,12 +143,12 @@ body {
    RULES PAGE SPECIFIC
 =========================== */
 body.rules-page .overlay {
-    background: url("./landing_bg.jpg") center top / auto 100%; /* Hintergrund richtig skalieren */
+    background: url("./landing_bg.jpg") center top / cover no-repeat;
     min-height: 100vh;
     display: flex;
-    justify-content: left; /* horizontal zentrieren */
-    align-items: flex-start;  /* Inhalt oben starten */
-    padding: 60px 2rem;       /* Abstand oben und Seitenpadding */
+    justify-content: flex-start; /* Inhalt oben starten */
+    align-items: flex-start;
+    padding: 60px 2rem; /* Abstand oben und Seitenpadding */
 }
 
 body.rules-page .overlay .content {
