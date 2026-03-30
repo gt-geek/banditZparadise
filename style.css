@@ -14,8 +14,8 @@ html, body {
 
 body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    display: flex;              /* Sticky Footer */
+    flex-direction: column;     
     color: white;
     background-color: black;
     overflow-x: hidden;
@@ -76,26 +76,21 @@ body {
 }
 
 /* ===========================
-   OVERLAY / BACKGROUND (FIXED)
+   OVERLAY / BACKGROUND
 =========================== */
 .overlay {
     position: relative;
     width: 100%;
-    margin-top: 100px;
-
-    height: calc(100vh - 100px); /* FIX: feste Höhe */
-    background: url("./landing_bg.jpg") center center / cover no-repeat;
-
+    margin-top: 100px; /* Navbar-Höhe */
+    min-height: calc(100vh - 100px); /* Home/Hero Fullscreen */
+    background: url("./landing_bg.jpg") center top / cover no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center; /* sauber zentriert */
+    align-items: flex-start;
     text-align: center;
-    padding: 2rem;
-
-    overflow: hidden; /* verhindert Stretch */
+    padding: 180px 2rem 2rem;
 }
 
-/* dunkler Overlay Effekt */
 .overlay::after {
     content: "";
     position: absolute;
@@ -110,10 +105,12 @@ body {
 }
 
 /* ===========================
-   RULES PAGE FIX (WICHTIG)
+   RULES PAGE FIX
 =========================== */
 body.rules-page .overlay {
-    height: 400px; /* feste Hero-Höhe */
+    min-height: auto; /* kein Fullscreen, passt sich Inhalt an */
+    padding: 120px 2rem 2rem; /* Abstand unter Navbar */
+    background: url("./landing_bg.jpg") center top / cover no-repeat;
 }
 
 /* ===========================
