@@ -85,7 +85,7 @@ body {
     left: 0;
     background: url("./landing_bg.jpg") center top / cover no-repeat;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: flex-start;
     text-align: left;
     padding-top: 120px; /* Abstand für Navbar */
