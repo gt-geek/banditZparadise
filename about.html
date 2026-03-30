@@ -1,50 +1,381 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About BanditZParadise</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="about-page">
+/* ===========================
+   RESET & GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Aptos Black, sans-serif;
+}
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <img src="logo.png" class="logo" alt="BanditZParadise Logo">
-    <div class="nav-links">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="rules.html">RULES</a>
-        <a href="discord.html">DISCORD</a>
-    </div>
-</nav>
+html, body {
+    height: 100%;
+}
 
-<!-- OPTIONAL OVERLAY -->
-<div class="overlay"></div>
+body {
+    min-height: 100vh;
+    display: flex;              /* Sticky Footer */
+    flex-direction: column;     /* Sticky Footer */
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
 
-<!-- PAGE CONTENT -->
-<main class="page-content">
-    <div class="content-box">
-        <h1 id="start">BanditZParadise</h1>
-        
-        <p>Welcome to <strong>BanditZParadise</strong> – where mercy is weakness and only the strongest survive. Dive into the most brutal DayZ experience, where every rock hides an ambush and every shadow could be your enemy. Here you don't just fight the world – you fight every other player.</p>
-        <p><strong>BanditZParadise</strong> isn't for the faint-hearted. Our server delivers pure, unfiltered Vanilla+ action with smart mod configuration that perfects the DayZ feel without diluting the hardcore survival. Whether solo bandit, wolf pack, or temporary alliances – everyone's your enemy until you put a bullet in them.</p>
-        <p>Our admins rule with an iron fist for <strong>fair bandit warfare</strong>: No cheaters, no exploiters, no crybabies. Violations of the <strong>BanditZParadise - Rules</strong> end quickly and permanently. Respect the code, or become the hunted.</p>
-        <p><strong>BanditZParadise</strong> runs 24/7 for the true hardcore crew. Find our server IP, rules, and further information within our <strong>DISCORD</strong> in the navigation above.</p>
-        <p>Enter the paradise of the lawless. Loot gear, set traps, ambush players, or survive alone. <strong>BanditZParadise</strong> – where the strongest rule and the weak become legends.</p>
-        <p style="font-size:24px;margin-top:2rem;"><strong>See ya online, BanditZ!</strong> 💀</p>
-        <a href="discord.html" class="btn">JOIN THE BANDITZ</a>
-    </div>
-</main>
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-links">
-        <a href="terms.html" class="footer-btn">TERMS & CONDITIONS</a>
-        <a href="imprint.html" class="footer-btn">IMPRINT</a>
-        <a href="contact.html" class="footer-btn">CONTACT US</a>
-    </div>
-    <p class="footer-copy">© 2026 BanditZParadise. All rights reserved.</p>
-</footer>
+.logo {
+    height: 80px;
+    margin-right: 50px;
+}
 
-</body>
-</html>
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-color: #f58442;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+.page-content {
+    flex: 1; /* Sticky Footer */
+    padding-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===========================
+   OVERLAY / BACKGROUND
+=========================== */
+.overlay {
+    position: relative;
+    width: 100%;
+    background: url("./landing_bg.jpg") center top / cover no-repeat;
+    display: flex;                  /* zentriert Content */
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding: 180px 2rem 2rem;
+    min-height: calc(100vh - 100px);
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===========================
+   UNIVERSAL CONTENT BOX
+=========================== */
+.content-box {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.content-box h1,
+.content-box h2,
+.content-box h3 {
+    color: #f58442;
+    margin-top: 2rem;
+}
+
+.content-box h1 {
+    font-size: 3rem;
+}
+
+.content-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.content-box h3 {
+    font-size: 1.4rem;
+}
+
+.content-box p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   RULES PAGE
+=========================== */
+body.rules-page .overlay {
+    background-size: auto 100%; /* proportional skalieren */
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: auto;           /* Höhe vom Content abhängig */
+    padding: 120px 2rem 50px;   /* Abstand oben/unten */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+body.rules-page .overlay .content {
+    background: rgba(0,0,0,0.9);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+body.rules-page .overlay .content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+body.rules-page .overlay .content > ul > li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0.8rem;
+}
+
+body.rules-page .overlay .content > ul > li::before {
+    content: "•";
+    color: #f58442;
+    position: absolute;
+    left: 0;
+}
+
+body.rules-page .overlay .content li ul {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+/* ===========================
+   LEGAL PAGES
+=========================== */
+.legal-page p {
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+}
+
+/* ===========================
+   CONTACT PAGE
+=========================== */
+body.contact-page .page-content {
+    padding-top: 120px;
+}
+
+.contact-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.contact-box a {
+    color: #f58442;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.6);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    border-color: #f58442;
+    background: #f58442;
+    color: black;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+.about-section {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.2rem;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* ===========================
+   SERVER SECTION
+=========================== */
+.server-section {
+    padding: 80px 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+.server-section h2 {
+    color: #f58442;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.server-container {
+    display: flex;
+    justify-content: center;
+}
+
+.server-card {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    padding: 40px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+}
+
+.server-card h3 {
+    color: #f58442;
+    margin-bottom: 15px;
+}
+
+.server-card p {
+    margin-bottom: 15px;
+}
+
+.connect-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #f58442;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: #fff;
+    color: #f58442;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+    background-color: black;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.footer-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-btn:hover {
+    color: #f58442;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width:768px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .content-box,
+    .about-text {
+        padding: 2rem 1rem;
+    }
+
+    .content-box h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
