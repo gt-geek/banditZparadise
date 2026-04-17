@@ -88,7 +88,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding-top: 80px; /* Abstand für Navbar */
+    padding-top: 120px; /* Abstand für Navbar */
     pointer-events: none; /* Hintergrund blockiert keine Klicks */
 }
 
@@ -96,7 +96,7 @@ body {
 .overlay .container {
     pointer-events: auto; /* Inhalte wieder klickbar */
     position: relative;
-    margin-top: 25%;
+    margin-top: 15%;
     z-index: 2;
 }
 
