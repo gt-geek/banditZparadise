@@ -88,7 +88,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding-top: 120px; /* Abstand für Navbar */
+    padding-top: 80px; /* Abstand für Navbar */
     pointer-events: none; /* Hintergrund blockiert keine Klicks */
 }
 
